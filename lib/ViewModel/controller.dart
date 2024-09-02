@@ -6,7 +6,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class TaskViewModel extends GetxController
 {
-final TextEditingController controllerer=TextEditingController();
+final TextEditingController controller=TextEditingController();
   final RxList<Task> tasks=<Task>[].obs;
   int currentPriority=0;
   void loadTask()async{
@@ -28,7 +28,7 @@ void addTask({required String taskTitle}){
   currentPriority++;
     if(taskTitle.isNotEmpty){
       tasks.add(Task(title: taskTitle,priority: currentPriority));
-      controllerer.clear();
+      controller.clear();
       saveTasks();
     }
 
